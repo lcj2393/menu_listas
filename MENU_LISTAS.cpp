@@ -10,7 +10,7 @@ struct Nodo{
     Nodo *Siguiente;
 };
 void init_pila();
-void vacia_pila_bool(Nodo *&, int);
+void vacia_pila_bool(Nodo *&);
 void ins_pila(Nodo *&, int);
 void most_pila(Nodo *&, int);
 void limpiar_pila(Nodo *&, int &);
@@ -84,7 +84,7 @@ void init_pila(){//FUNCION PARA INICIALIZAR PILA
     printf("\nInicializacion realizada correctamente!!\n");
 }
 
-void vacia_pila_bool(Nodo *&pila, int n){//FUNCION PARA VALIDAR SI LA PILA ESTA VACIA O NO
+void vacia_pila_bool(Nodo *&pila){//FUNCION PARA VALIDAR SI LA PILA ESTA VACIA O NO
     bool validador;
 
     if(pila==NULL){
