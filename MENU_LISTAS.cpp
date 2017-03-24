@@ -12,7 +12,6 @@ struct Nodo{
 void init_pila();
 void vacia_pila_bool(Nodo *&);
 void ins_pila(Nodo *&, int);
-void most_pila(Nodo *&, int);
 void limpiar_pila(Nodo *&, int &);
 
 int main(){
@@ -26,8 +25,7 @@ int main(){
         printf("\n1. Inicializar Pila");
         printf("\n2. Verificar estado de Pila");
         printf("\n3. Insertar Elementos de Pila");
-        printf("\n4. Mostrar Elementos de Pila");
-        printf("\n5. Quitar Elementos de Pila");
+        printf("\n4. Quitar Elementos de Pila");
         printf("\n0. SALIR\n");
         printf("\nOpcion: ");scanf("%d",&opc);
 
@@ -39,7 +37,7 @@ int main(){
                 init_pila();
                 break;
             case 2:
-                vacia_pila_bool(pila,n);
+                vacia_pila_bool(pila);
                 break;
             case 3:
                 printf("Presiones (0) cuando termine el ingreso de numeros");
@@ -50,17 +48,6 @@ int main(){
                 }while(n!=0);
                 break;
             case 4:
-
-                while(pila!=NULL){
-                most_pila(pila,n);
-                    if(pila!=NULL){
-                        printf("%d -> ",n);
-                    }else{
-                        printf("%d -> FIN",n);
-                    }
-                }
-                break;
-            case 5:
                 while(pila!=NULL){
                 limpiar_pila(pila,n);
                     if(pila!=NULL){
@@ -106,12 +93,6 @@ void ins_pila(Nodo *&pila, int n){//FUNCION PARA INSERTAR VALORES A LA PILA
     nuevo_nodo->num=n;
     nuevo_nodo->Siguiente=pila;
     pila= nuevo_nodo;
-}
-
-void most_pila(Nodo *&pila, int n){//FUNCION PARA MOSTRAR LOS VALORES INGRESADOS EN LA PILA
-    Nodo *aux=pila;
-    n=aux->num;
-    pila=aux->Siguiente;
 }
 
 void limpiar_pila(Nodo *&pila, int &n){//FUNCION PARA LIMPIAR PILA
